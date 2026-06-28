@@ -14,11 +14,11 @@
 \AddToHook{begindocument/before}{\@ifpackageloaded{minted}{\removefromtoclist[float]{lol}}{}}
 \makeatother
 
-\AtBeginEnvironment{figure}{\vspace{0.5cm}}
-\AtBeginEnvironment{table}{\vspace{0.5cm}}
-\AtBeginEnvironment{listing}{\vspace{0.5cm}}
-\AtBeginEnvironment{algorithm}{\vspace{0.5cm}}
-\AtBeginEnvironment{minted}{\vspace{-0.5cm}}
+%\AtBeginEnvironment{figure}{\vspace{0.5cm}}
+%\AtBeginEnvironment{table}{\vspace{0.5cm}}
+%\AtBeginEnvironment{listing}{\vspace{0.5cm}}
+%\AtBeginEnvironment{algorithm}{\vspace{0.5cm}}
+%\AtBeginEnvironment{minted}{\vspace{-0.5cm}}
 
 \usepackage{fancyvrb}
 \usepackage{ulem,bm,mathrsfs,ifsym} %зачеркивания, особо жирный стиль и RSFS начертание
@@ -28,7 +28,7 @@
 %%% Поля и разметка страницы %%%
 \usepackage{pdflscape}                              % Для включения альбомных страниц
 \usepackage{geometry}                               % Для последующего задания полей
-\geometry{a4paper,tmargin=2cm,bmargin=2cm,lmargin=3cm,rmargin=1cm} % тоже самое, но лучше
+\geometry{a4paper,left=3cm,right=1cm,top=2cm,bottom=2cm,includehead=false,includefoot=false}
 
 %%% Математические пакеты %%%
 \usepackage{amsthm,amsfonts,amsmath,amssymb,amscd}  % Математические дополнения от AMS
@@ -288,12 +288,13 @@
 \urlstyle{same}
 %%% Шаблон %%%
 %\DeclareRobustCommand{\todo}{\textcolor{red}}       % решаем проблему превращения названия цвета в результате \MakeUppercase, http://tex.stackexchange.com/a/187930/79756 , \DeclareRobustCommand protects \todo from expanding inside \MakeUppercase
-\setlength{\parindent}{2.5em}                       % Абзацный отступ. Должен быть одинаковым по всему тексту и равен пяти знакам (ГОСТ Р 7.0.11-2011, 5.3.7).
+%\setlength{\parindent}{2.5em}                       % Абзацный отступ. Должен быть одинаковым по всему тексту и равен пяти знакам (ГОСТ Р 7.0.11-2011, 5.3.7).
 
 %%% Списки %%%
 % Используем дефис для ненумерованных списков (ГОСТ 2.105-95, 4.1.7)
 %\renewcommand{\labelitemi}{\normalfont\bfseries~{---}} 
 \renewcommand{\labelitemi}{\bfseries~{---}} 
+\setlength{\parindent}{1.25cm}                       % Абзацный отступ. Должен быть одинаковым по всему тексту и равен 1.25 см.
 \setlist{nosep,%                                    % Единый стиль для всех списков (пакет enumitem), без дополнительных интервалов.
     labelindent=\parindent,leftmargin=*%            % Каждый пункт, подпункт и перечисление записывают с абзацного отступа (ГОСТ 2.105-95, 4.1.8)
 }
